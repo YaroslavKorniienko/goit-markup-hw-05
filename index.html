@@ -64,7 +64,7 @@
       <section class="section-hero overlay">
         <div class="container hero">
           <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-          <button class="hero-btn" type="button">Замовити послугу</button>
+          <button class="hero-btn" type="button" data-modal-open>Замовити послугу</button>
         </div>
       </section>
       <!--приемущества-->
@@ -104,29 +104,32 @@
         <div class="container">
           <h2 class="section-title">Чим ми займаємося</h2>
           <ul class="gallery-list list">
-            <li>
+            <li class="gallery-item">
               <img
                 src="./images/img1.jpg"
                 alt="Програміст працює на робочому столі в офісі"
                 width="370"
                 height="294"
               />
+              <p class="gallery-text">Десктопні додатки</p>
             </li>
-            <li>
+            <li class="gallery-item">
               <img
                 src="./images/img2.jpg"
                 alt="Дизайнери розробляють додаток для смартфонів, команда творців працює над інтерфейсом мобільних телефонів"
                 width="370"
                 height="294"
               />
+              <p class="gallery-text">Мобільні додатки</p>
             </li>
-            <li>
+            <li class="gallery-item">
               <img
                 src="./images/img3.jpg"
                 alt="Творчий художник веб-дизайну з робочим графічним планшетом із вибором кольорів"
                 width="370"
                 height="294"
               />
+              <p class="gallery-text">Дизайнерські рішення</p>
             </li>
           </ul>
         </div>
@@ -413,8 +416,15 @@
         </div>
       </div>
     </footer>
-    <!--<div class="backdrop">
-      <div class="modal"></div>
-    </div>-->
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button type="button" class="modal-btn" data-modal-close>
+          <svg class="modal-close-icon" width="18px" height="18px">
+            <use href="./images/symbol-defs.svg#icon-close-hero-button"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

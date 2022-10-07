@@ -181,8 +181,8 @@ img {
   display: block;
   position: absolute;
   left: 0;
-  bottom: 0;
-  width: auto;
+  bottom: -1px;
+  width: 100%;
   height: 4px;
   border-radius: 2px;
   background-color: var(--accent-color);
@@ -309,6 +309,24 @@ img {
   display: flex;
   gap: 30px;
 }
+.gallery-item {
+  position: relative;
+}
+.gallery-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  font-weight: 700;
+  line-height: 1.14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: var(--team-background-color);
+  background: rgba(47, 48, 58, 0.8);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 /*---наша команда---*/
 
 .section-team {
@@ -423,7 +441,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition-property: border;
+  transition-property: border, color;
   transition-duration: 250ms;
   transition-timing-function: var(--transition-timing-main);
   color: var(--main-icon-color);
@@ -646,6 +664,7 @@ img {
   background-color: rgba(0, 0, 0, 0.2);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: opacity 300ms linear, visibility 300ms linear;
 }
 
 .modal {
@@ -655,5 +674,30 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform 300ms linear;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+.modal-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  margin-top: 8px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
